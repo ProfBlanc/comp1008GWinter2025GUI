@@ -17,6 +17,15 @@ public class LoginController {
 
     LoginModel model = new LoginModel();
 
+
+    @FXML
+    void initialize(){
+
+        txtUsername.setText("admin");
+        txtPassword.setText("password");
+
+    }
+
     @FXML
     void onRegisterClicked(ActionEvent event) {
 
@@ -31,7 +40,12 @@ public class LoginController {
             if(model.processLogin(txtUsername.getText(), txtPassword.getText())){
                 txtUsername.clear();
                 txtPassword.clear();
-                Utilities.showMessage("Success", "You are logged in").show();
+                //Utilities.showMessage("Success", "You are logged in").show();
+
+                //call on a utilities method to open a window
+                Utilities.openWindow("Homepage", "main", event);
+
+
             }else{
                 Utilities.showErrorMessage("Invalid Login", "Your data was not found").show();
             }
