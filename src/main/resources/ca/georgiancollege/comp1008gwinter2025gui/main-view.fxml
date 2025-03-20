@@ -12,9 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="body" onMouseMoved="#onHover" prefHeight="469.0" prefWidth="616.0"
-            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="body" onMouseMoved="#onHover" prefHeight="469.0" prefWidth="616.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="18.0" layoutY="27.0" prefHeight="58.0" prefWidth="568.0" text="Welcome To Our JavaFX App">
          <font>
@@ -25,29 +23,29 @@
       <Label layoutX="9.0" layoutY="111.0" prefHeight="42.0" prefWidth="542.0" text="Start off by clicking on any of the icons below or by typing in the search bar at the bottom" />
       <HBox layoutX="14.0" layoutY="165.0" prefHeight="100.0" prefWidth="568.0">
          <children>
-            <ImageView fx:id="imgViewProfile" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgViewProfile" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#onImageViewClicked" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/view_profile.jpg" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgeditProfile" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgEditProfile" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#onImageViewClicked" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/edit_profile.jpg" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgTicTacToe" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgTicTacToe" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#onImageViewClicked" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/tictacktoe.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgMemoryBlocks" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgMemoryBlocks" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#onImageViewClicked" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/memory_blocks.jpg" />
                </image>
             </ImageView>
          </children>
       </HBox>
-      <GridPane layoutX="34.0" layoutY="345.0" prefHeight="99.0" prefWidth="542.0">
+      <GridPane fx:id="grid" layoutX="34.0" layoutY="345.0" prefHeight="99.0" prefWidth="542.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.20001220703125" minWidth="10.0" prefWidth="118.20001220703125" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="471.79998779296875" minWidth="10.0" prefWidth="418.0" />
@@ -59,7 +57,7 @@
         </rowConstraints>
          <children>
             <Label text="Search" />
-            <TextField fx:id="inputSearch" GridPane.columnIndex="1" />
+            <TextField fx:id="inputSearch" onKeyReleased="#onKeyAction" GridPane.columnIndex="1" />
             <Button mnemonicParsing="false" onAction="#onSubmit" text="Submit" GridPane.columnIndex="2" />
             <Label text="Result" GridPane.rowIndex="1" />
             <TextField fx:id="inputResult" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
