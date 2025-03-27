@@ -1,0 +1,17 @@
+Create a School Management
+
+You are the manager of many schools
+Each school has a campus
+Each campus has an address
+Each school has students organized by student ID
+Each student has first & last name
+Each student is enrolled in a semester (year-semester)
+Each semester, the student has courses
+Each course has evaluations
+Each evaluation has a grade
+
+Create a console system where admin
+    add a school, campus, address, student, student enrollment
+    & grade
+
+    view, edit & all items above

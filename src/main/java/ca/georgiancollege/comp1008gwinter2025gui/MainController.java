@@ -53,9 +53,7 @@ public class MainController {
         String textEntered = inputSearch.getText();
 
         inputResult.setText(
-                nodesOnScreen.contains(textEntered) ? "A node exists with ID of "
-                        + nodesOnScreen.get(nodesOnScreen.indexOf(textEntered))
-                        : "No match"
+                nodesOnScreen.contains(textEntered) ? "A node exists with ID of " + nodesOnScreen.get(nodesOnScreen.indexOf(textEntered)) : "No match"
         );
     }
 
